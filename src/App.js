@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { MyForm } from "./components/myForm/MyForm";
+import { ConfigProvider } from "antd";
+import dayjs from "dayjs";
+import "dayjs/locale/ru";
+import ruRU from "antd/locale/ru_RU";
+
+var updateLocale = require("dayjs/plugin/updateLocale");
+dayjs.extend(updateLocale);
+dayjs.updateLocale("ru", {
+  weekStart: 1,
+});
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ConfigProvider locale={ruRU}>
+      <div className="App">
+        <MyForm></MyForm>
+      </div>
+    </ConfigProvider>
   );
 }
 

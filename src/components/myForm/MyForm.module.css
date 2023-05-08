@@ -1,0 +1,88 @@
+.block {
+  width: 70%;
+  margin: 40px auto;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  padding: 20px 10px 30px;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-color: #fff;
+}
+
+.form {
+  margin-top: 30px;
+  width: 40%;
+}
+
+.formButtons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 30px;
+}
+
+.alert {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  top: 35%;
+  right: 5%;
+  width: 20%;
+  transition: 0.6s;
+}
+
+@media (max-width: 950px) {
+  .alert {
+    top: 32%;
+  }
+}
+
+@media (max-width: 850px) {
+  .title {
+    word-wrap: break-word;
+    width: 80%;
+  }
+}
+
+@media (max-width: 650px) {
+  .form {
+    width: 60%;
+  }
+  .alert {
+    right: -12%;
+    width: 30%;
+  }
+}
+
+@media (max-width: 550px) {
+  .block {
+    padding: 10px 0 30px;
+  }
+  .form {
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 450px) {
+  .block {
+    padding: 0 0 10px;
+    width: 90%;
+  }
+  .form {
+    width: 80%;
+  }
+  .alert {
+    right: 20%;
+    background-color: #fff;
+    width: 60%;
+    border-radius: 25px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    padding: 10px 5px;
+  }
+}
