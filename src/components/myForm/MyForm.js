@@ -25,10 +25,11 @@ export const MyForm = () => {
     dateRange.start.setSeconds(0, 0);
     dateRange.end.setSeconds(0, 0);
     res.dateRange = dateRange;
-    res.text = res.text || "";
+    res.comment = res.comment || "";
     console.log("Success:", res);
     setSubmitionAlert({ opacity: "1" });
     setTimeout(() => setSubmitionAlert({ opacity: "0" }), 5000);
+    onReset();
   };
   const onReset = () => {
     formRef.current?.resetFields();
@@ -139,8 +140,8 @@ export const MyForm = () => {
                 label: "Башня A",
               },
               {
-                value: "B",
-                label: "Башня В",
+                value: "Б",
+                label: "Башня Б",
               },
             ]}
           />
@@ -195,8 +196,8 @@ export const MyForm = () => {
             disabledTime={disabledRangeTime}
           />
         </Form.Item>
-        <Form.Item name="text">
-          <TextArea id="text" rows={4} />
+        <Form.Item name="comment">
+          <TextArea id="comment" rows={4} placeholder="Комментарий" />
         </Form.Item>
         <div className={styles.formButtons}>
           <Form.Item shouldUpdate>
@@ -227,8 +228,7 @@ export const MyForm = () => {
       <div className={styles.alert} style={submitionAlert}>
         <SuccessImage />
         <Text>
-          Письмо для активации аккаунта успешно отправлено на адрес электронной
-          почты, который вы указали при регистрации.
+          Переговорка успешно забронирована.
         </Text>
       </div>
     </div>
